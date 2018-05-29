@@ -27,15 +27,32 @@
     }
 }
 
+@keyframes message-fade-in {
+    from {
+        color: rgba(255, 255, 255, 0);
+    }
+    to {
+        color: white;
+    }
+}
+
+@keyframes message-glow {
+    from {
+        text-shadow: 0 0 0 white;
+    }
+    to {
+        text-shadow: 0 0 13px white;
+    }
+}
+
 html {
     height: 100%;
 }
 
 body {
     position: fixed;
-    /* background: radial-gradient(#000000 30%, red 40%, orange 50%, yellow 55%, #00ffbd 60%); */
-    background: radial-gradient(cyan 20%, yellow 25%, orange 30%, red 35%, #000000 40%);
-    background-size: 500% 500%;
+    background: radial-gradient(cyan 15%, yellow 22%, orange 26%, red 30%, #000000 40%);
+    background-size: 800% 500%;
     background-position-x: 50%;
     background-repeat: no-repeat;
     animation: horizon-set 30s ease-in forwards;
@@ -58,4 +75,14 @@ body {
     display: block;
     background-color: white;
     border-radius: 100%;
+}
+
+#message {
+    position: fixed;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: white;
 }
