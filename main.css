@@ -1,0 +1,61 @@
+@keyframes horizon-set { 
+    from{background-position-y: 50%}
+    to{background-position-y: 0%}
+}
+
+@keyframes sun-set {
+    from {
+        width: 150px;
+        height: 150px;
+        box-shadow: 0 0 33px 23px gold;
+        top: -200px;
+    }
+    to {
+        width: 200px;
+        height: 200px;
+        box-shadow: 0 0 33px 33px gold;
+        top: 110%;
+    }
+}
+
+@keyframes star-glow {
+    from {
+        box-shadow: 0 0 3px white;
+    }
+    to {
+        box-shadow: 0 0 3px 1px white;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    position: fixed;
+    /* background: radial-gradient(#000000 30%, red 40%, orange 50%, yellow 55%, #00ffbd 60%); */
+    background: radial-gradient(cyan 20%, yellow 25%, orange 30%, red 35%, #000000 40%);
+    background-size: 500% 500%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    animation: horizon-set 30s ease-in forwards;
+    height: 100%;
+    width: 100%;
+}
+
+#sun {
+    position: fixed;
+    display: block;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: gold;
+    border-radius: 100%;
+    animation: sun-set 30s ease-out forwards;
+}
+
+.star {
+    position: fixed;
+    display: block;
+    background-color: white;
+    border-radius: 100%;
+}
