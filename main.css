@@ -1,6 +1,26 @@
+@-webkit-keyframes horizon-set { 
+    from{background-position-y: 50%}
+    to{background-position-y: 0%}
+}
+
 @keyframes horizon-set { 
     from{background-position-y: 50%}
     to{background-position-y: 0%}
+}
+
+@-webkit-keyframes sun-set {
+    from {
+        width: 150px;
+        height: 150px;
+        box-shadow: 0 0 33px 23px gold;
+        top: -200px;
+    }
+    to {
+        width: 200px;
+        height: 200px;
+        box-shadow: 0 0 33px 33px gold;
+        top: 110%;
+    }
 }
 
 @keyframes sun-set {
@@ -18,6 +38,15 @@
     }
 }
 
+@-webkit-keyframes star-glow {
+    from {
+        box-shadow: 0 0 3px white;
+    }
+    to {
+        box-shadow: 0 0 3px 1px white;
+    }
+}
+
 @keyframes star-glow {
     from {
         box-shadow: 0 0 3px white;
@@ -27,12 +56,30 @@
     }
 }
 
+@-webkit-keyframes message-fade-in {
+    from {
+        color: rgba(255, 255, 255, 0);
+    }
+    to {
+        color: white;
+    }
+}
+
 @keyframes message-fade-in {
     from {
         color: rgba(255, 255, 255, 0);
     }
     to {
         color: white;
+    }
+}
+
+@-webkit-keyframes message-glow {
+    from {
+        text-shadow: 0 0 0 white;
+    }
+    to {
+        text-shadow: 0 0 13px white;
     }
 }
 
@@ -51,11 +98,13 @@ html {
 
 body {
     position: fixed;
+    background: -webkit-radial-gradient(cyan 15%, yellow 22%, orange 26%, red 30%, #000000 40%);
     background: radial-gradient(cyan 15%, yellow 22%, orange 26%, red 30%, #000000 40%);
     background-size: 800% 500%;
     background-position-x: 50%;
     background-repeat: no-repeat;
-    animation: horizon-set 30s ease-in forwards;
+    -webkit-animation: horizon-set 30s ease-in forwards;
+            animation: horizon-set 30s ease-in forwards;
     height: 100%;
     width: 100%;
 }
@@ -64,10 +113,12 @@ body {
     position: fixed;
     display: block;
     left: 50%;
-    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
     background-color: gold;
     border-radius: 100%;
-    animation: sun-set 30s ease-out forwards;
+    -webkit-animation: sun-set 30s ease-out forwards;
+            animation: sun-set 30s ease-out forwards;
 }
 
 .star {
@@ -82,7 +133,9 @@ body {
     display: block;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 80px;
     font-size: 5rem;
     color: white;
 }
